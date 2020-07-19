@@ -9,5 +9,8 @@ echo -e "Container will contain: "; \
 echo -e "Alpine Version: \c" && cat /etc/alpine-release \
 && echo -e "Kubernetes version $release" ;\
 curl https://storage.googleapis.com/kubernetes-release/release/$release/bin/linux/amd64/kubectl --output /usr/local/bin/kubectl;
+
+RUN apk del curl
+RUN rm -rf /var/cache/apk/*
 RUN chmod +x /usr/local/bin/kubectl
 ENTRYPOINT ["/usr/local/bin/kubectl"]
