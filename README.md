@@ -30,7 +30,7 @@ docker pull jfwenisch/alpine-kubectl
 
 ```
 
-docker run jfwenisch/alpine-kubectl config view
+docker run jfwenisch/alpine-kubectl --help
 
 ```
 
